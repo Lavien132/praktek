@@ -1,0 +1,114 @@
+ROUTER 1
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 2.2.2.1 255.0.0.0
+Router(config-if)#ip address 2.2.2.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#ex
+
+ROUTER 2
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 2.2.2.2 255.0.0.0
+Router(config-if)#ip address 2.2.2.2 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#interface Serial3/0
+Router(config-if)#ip address 9.9.9.1 255.0.0.0
+Router(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+ip address 9.9.9.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial6/0
+Router(config-if)#ip address 10.10.10.1 255.0.0.0
+Router(config-if)#ip address 10.10.10.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial7/0
+Router(config-if)#ip address 3.3.3.1 255.0.0.0
+Router(config-if)#ip address 3.3.3.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+Router(config-if)#ex
+
+ROUTER 3
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 9.9.9.2 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+ip address 192.168.1.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#interface FastEthernet1/0
+Router(config-if)#ip address 192.168.2.1 255.255.255.0
+Router(config-if)#ip address 192.168.2.1 255.255.255.0
+Router(config-if)#no shutdown
+
+ROUTER 4
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 10.10.10.2 255.0.0.0
+Router(config-if)#ip address 10.10.10.2 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#interface FastEthernet0/0
+Router(config-if)#ip address 192.168.3.1 255.255.255.0
+Router(config-if)#ip address 192.168.3.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#interface FastEthernet1/0
+Router(config-if)#ip address 192.168.4.1 255.255.255.0
+Router(config-if)#ip address 192.168.4.1 255.255.255.0
+Router(config-if)#no shutdown
+
+ROUTER 5
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 3.3.3.2 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+Router(config-if)#exit
+Router(config)#interface Serial3/0
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+Router(config-if)#ip address 11.11.11.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial6/0
+Router(config-if)#ip address 12.12.12.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#interface Serial7/0
+Router(config-if)#ip address 7.7.7.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#interface Serial6/0
+Router(config-if)#exit
+Router(config)#interface Serial8/0
+Router(config-if)#ip address 4.4.4.1 255.255.255.0
+Router(config-if)#no shutdown
